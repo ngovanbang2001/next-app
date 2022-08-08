@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
   },
   transformRequest: [(params) => JSON.stringify({ data: params })],
 });
-axiosClient.interceptors.response.use(
+axiosInstance.interceptors.response.use(
   (response) => {
     if (response && response.data) {
       return response.data;
