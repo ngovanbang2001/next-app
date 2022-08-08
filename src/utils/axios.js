@@ -9,13 +9,15 @@ const axiosInstance = axios.create({
   },
   transformRequest: [(params) => JSON.stringify({ data: params })],
 });
-
-axiosInstance.interceptors.response.use(
-  (response) => response,
+axiosClient.interceptors.response.use(
+  (response) => {
+    if (response && response.data) {
+      return response.data;
+    }
+    return response;
+  },
   (error) => {
-    return Promise.reject(
-      (error.response && error.response.data) || "Something went wrong"
-    );
+    throw error;
   }
 );
 
