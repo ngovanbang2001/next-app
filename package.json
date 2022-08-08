@@ -2,6 +2,7 @@
   "name": "demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ngovanbang2001.github.io/next-app/",
   "scripts": {
     "dev:windows": "start http://localhost:3000 && next dev",
     "dev:default": "next dev",
